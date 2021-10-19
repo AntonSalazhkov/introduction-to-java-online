@@ -44,7 +44,7 @@ public class Student {
 		}
     	return gradeExcellentStudent; 	
     }  
-    //
+
     public void setGrade(int firstNumber, int secondNumber) {    //сеттеры
     	grade[firstNumber] = secondNumber;
     }    
