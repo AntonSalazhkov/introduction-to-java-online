@@ -14,38 +14,33 @@ public class Student {
         initials = secondParameter;
         groupNumber = thirdParameter;
     }
-    
+
     public String getGrade() {            //геттеры
-    	return Arrays.toString(grade);
+        return Arrays.toString(grade);
     }
 
     public String getSurname() {
         return surname;
     }
-    
+
     public String getInitials() {
         return initials;
     }
-    
+
     public int getGroupNumber() {
         return groupNumber;
     }
-    
-    public boolean getGradeExcellentStudent () {
-    	int numberOfBadGrades = 0;
-    	boolean gradeExcellentStudent = false;
-    	for (int i = 0; i < grade.length; i++) {
-    		if (grade[i] < 9) {                 // считаем количество плохих оценок
-                numberOfBadGrades++;
-    		}
-    	}
-    	if (numberOfBadGrades != grade.length) { // если есть хоть одна хорошая оценка, то помечаем данного студента
-    		gradeExcellentStudent = true;
-		}
-    	return gradeExcellentStudent; 	
-    }  
+
+    public boolean isExcellentStudent() {
+        for (int i = 0; i < grade.length; i++) {
+            if (grade[i] > 8) {                 // Если есть хоть одна 9 или 10 выводим true
+                return true;
+            }
+        }
+        return false;
+    }
 
     public void setGrade(int firstNumber, int secondNumber) {    //сеттеры
-    	grade[firstNumber] = secondNumber;
-    }    
+        grade[firstNumber] = secondNumber;
+    }
 }

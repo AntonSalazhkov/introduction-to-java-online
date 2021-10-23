@@ -22,27 +22,27 @@ public class Main {
         students[7] = new Student("Kyliba", "L.V.", 3);
         students[8] = new Student("Sich", "N.G.", 4);
         students[9] = new Student("Sokolov", "A.D.", 1);
-        
+
         Random random = new Random();
         boolean[] arrayGradesExcellentStudent = new boolean[10];
-              
+
         for (int i = 0; i < students.length; i++) {
-        	for (int k = 0; k < 5; k++) {
-        		students[i].setGrade(k, random.nextInt(10) + 1); // Присваиваем случайные числа от 1 до 10, т.к. 0 - не оценка
-        	}
-        	System.out.println("Студент " + students[i].getSurname() + " " + students[i].getInitials() 
-        			+ " из группы № " + students[i].getGroupNumber() + " имеет следующие оценки: " + students[i].getGrade());
-        	
-        	arrayGradesExcellentStudent[i] = students[i].getGradeExcellentStudent();
-        }   
-        
+            for (int k = 0; k < 5; k++) {
+                students[i].setGrade(k, random.nextInt(10) + 1); // Присваиваем случайные числа от 1 до 10, т.к. 0 - не оценка
+            }
+            System.out.println("Студент " + students[i].getSurname() + " " + students[i].getInitials()
+                    + " из группы № " + students[i].getGroupNumber() + " имеет следующие оценки: " + students[i].getGrade());
+
+            arrayGradesExcellentStudent[i] = students[i].isExcellentStudent();
+        }
+
         System.out.println("");
         System.out.println("Студенты отличники имеющие оценки 9 или 10:");
         for (int j = 0; j < arrayGradesExcellentStudent.length; j++) {
-        	if (arrayGradesExcellentStudent[j]) {                      // выводим только тех студентов, которые имеют хоть одну 9 или 10
-        		System.out.println(students[j].getSurname() + " " + students[j].getInitials() 
-            			+ " из группы № " + students[j].getGroupNumber());
-        	}      	
+            if (arrayGradesExcellentStudent[j]) {                      // выводим только тех студентов, которые имеют хоть одну 9 или 10
+                System.out.println(students[j].getSurname() + " " + students[j].getInitials()
+                        + " из группы № " + students[j].getGroupNumber());
+            }
         }
     }
 }
