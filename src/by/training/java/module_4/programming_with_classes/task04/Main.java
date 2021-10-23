@@ -2,7 +2,7 @@ package by.training.java.module_4.programming_with_classes.task04;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main { 
 
     public static void main(String[] args) {
         // 4. Создайте класс Train, содержащий поля: название пункта назначения, номер поезда, время отправления.

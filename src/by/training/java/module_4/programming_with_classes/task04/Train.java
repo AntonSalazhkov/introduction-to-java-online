@@ -15,6 +15,7 @@ public class Train {
     public static void sortByNumbers(Train trains[]) {
         Train currentTrain;
         boolean cycle = false;
+
         while (!cycle) {
             cycle = true;
             for (int i = 0; i < trains.length - 1; i++) {
