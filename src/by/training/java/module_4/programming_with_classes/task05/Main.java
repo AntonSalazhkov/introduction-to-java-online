@@ -49,26 +49,25 @@ public class Main {
     }
 
     public static void inputNumbers(Counter counter, int parameter) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Укажите начальный диапазон счетчика >> ");
-        while (!sc.hasNextInt()) {
-            sc.nextLine();
-            System.out.print("Укажите начальный диапазон счетчика >> ");
-        }
-        counter.setMin(sc.nextInt());
-
-        System.out.print("Укажите конечный диапазон счетчика >> ");
-        while (!sc.hasNextInt()) {
-            sc.nextLine();
-            System.out.print("Укажите конечный диапазон счетчика >> ");
-        }
-        counter.setMax(sc.nextInt());
+        counter.setMin(getIntFromConsole("Укажите начальный диапазон счетчика >> "));
+        counter.setMax(getIntFromConsole("Укажите конечный диапазон счетчика >> "));
 
         if (parameter == 1) {
             counter.ascendingCounter();
         } else {
             counter.decreasingCounter();
         }
+    }
+
+    public static int getIntFromConsole(String message) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print(message);
+        while (!sc.hasNextInt()) {
+            sc.nextLine();
+            System.out.print(message);
+        }
+        return sc.nextInt();
     }
 }
