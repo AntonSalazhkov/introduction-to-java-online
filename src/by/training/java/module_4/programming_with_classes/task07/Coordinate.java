@@ -15,7 +15,7 @@ public class Coordinate {
         this.y = y;
     }
 
-    public static double side(Coordinate coordinateOne, Coordinate coordinateTwo) {
+    public static double getSide(Coordinate coordinateOne, Coordinate coordinateTwo) {
         double sideX = coordinateOne.x - coordinateTwo.x;
         double sideY = coordinateOne.y - coordinateTwo.y;
         return Math.sqrt(sideX * sideX + sideY * sideY);

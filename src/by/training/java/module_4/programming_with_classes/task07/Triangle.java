@@ -9,9 +9,9 @@ public class Triangle {
     private double area;
 
     public Triangle(Coordinate a, Coordinate b, Coordinate c) {
-        ab = Coordinate.side(a, b);
-        bc = Coordinate.side(b, c);
-        ac = Coordinate.side(a, c);
+        ab = Coordinate.getSide(a, b);
+        bc = Coordinate.getSide(b, c);
+        ac = Coordinate.getSide(a, c);
     }
 
     public double getArea() {
@@ -25,7 +25,7 @@ public class Triangle {
         return perimeter;
     }
 
-    public String medianCrossPoint(Coordinate a, Coordinate b, Coordinate c) {
+    public String getMedianCrossPoint(Coordinate a, Coordinate b, Coordinate c) {
         Coordinate coordinate4 = new Coordinate((a.getX() + b.getX() + c.getX()) / 3, (a.getY() + b.getY() + c.getY()) / 3);
         return "x: " + coordinate4.getX() + ", " + "y: " + coordinate4.getY();
     }
