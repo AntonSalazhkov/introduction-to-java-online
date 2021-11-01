@@ -39,14 +39,11 @@ public class Main {
 
             switch (number) {
                 case "1":
-                    Shop shop = new Shop();
-                    shop.sortAlphabetically(customer);
+                    Shop.sortAlphabetically(customer);
                     break;
                 case "2":
                     System.out.println("\nУстановите начальный и конечный интервал: ");
-                    shop = new Shop();
-                    shop.sortByInterval(customer, setInterval(), setInterval());
-
+                    Shop.sortByInterval(customer, setInterval(), setInterval());
                     break;
                 case "0":
                     System.out.print("Завершение работы приложения");
