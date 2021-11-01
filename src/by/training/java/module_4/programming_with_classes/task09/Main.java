@@ -41,19 +41,16 @@ public class Main {
 
             switch (number) {
                 case "1":
-                    Shop shop = new Shop();
                     System.out.print("Введите автора для поиска >> ");
-                    shop.getBookList(book, sc.nextLine(), 1);
+                    Shop.getBookList(book, sc.nextLine(), 1);
                     break;
                 case "2":
-                    shop = new Shop();
                     System.out.print("Введите издательство для поиска >> ");
-                    shop.getBookList(book, sc.nextLine(), 2);
+                    Shop.getBookList(book, sc.nextLine(), 2);
                     break;
                 case "3":
-                    shop = new Shop();
                     System.out.print("Введите год для поиска >> ");
-                    shop.getBookList(book, sc.nextLine(), 3);
+                    Shop.getBookList(book, sc.nextLine(), 3);
                     break;
                 case "0":
                     System.out.print("Завершение работы приложения");
