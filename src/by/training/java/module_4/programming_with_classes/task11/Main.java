@@ -1,5 +1,7 @@
 package by.training.java.module_4.programming_with_classes.task11;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -8,25 +10,32 @@ public class Main {
         //консоль текст, заголовок текста.
 
         Text text = new Text();
+        Sentence sentence = new Sentence(Arrays.asList(new Word("программы")));
+        text.setTitle(sentence.getSentence());
+
         System.out.print("Заголовок текста: ");
+        text.showTitle();
 
-        Word word = new Word("Программы");   // Заголовок текста
-        text.addText(word);          // Добавляем новый элемент в коллекцию
-        text.getString();            // Метод вывода на консоль
-
-        text.getWordList().clear();  // Очистить коллекцию
-
-        System.out.println("");
+        Sentence sentence2 = new Sentence(Arrays.asList(
+                new Word("хороший"),
+                new Word("программист"),
+                new Word("пишет"),
+                new Word("хорошие"),
+                new Word("программы"))
+        );
+        text.addSentence(sentence2);
         System.out.print("Исходный текст: ");
+        text.showText();
 
-        Word word2 = new Word("Хороший программист пишет хорошие программы");
-        Word word3 = new Word("в добром здравии");
-        text.addText(word2);
-        text.getString();
-
-        System.out.println("");
+        Sentence sentence3 = new Sentence(Arrays.asList(
+                new Word("плохой"),
+                new Word("программист"),
+                new Word("пишет"),
+                new Word("плохие"),
+                new Word("программы"))
+        );
+        text.addSentence(sentence3);
         System.out.print("Дополненный текст: ");
-        text.addText(word3);
-        text.getString();
+        text.showText();
     }
 }
