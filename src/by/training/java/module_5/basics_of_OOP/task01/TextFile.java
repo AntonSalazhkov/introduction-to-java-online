@@ -7,10 +7,41 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class TextFile extends UserFile {
+public class TextFile extends Directory {
 
-    public TextFile(Directory directory) {
-        super(directory);
+    private File file;
+
+    public void createFile(String path) {
+        file = new File(path);
+        try {
+
+            if (!file.exists()) {
+                file.createNewFile();
+                System.out.println("Файл успешно создан");
+            } else {
+                System.out.println("Файл с данным именем уже существует");
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void deleteFile() {
+        if (file != null && file.exists()) {
+            file.delete();
+
+            if (!file.exists()) {
+                System.out.println("Файл успешно удален");
+            } else {
+                System.out.println("Нет доступа к файлу");
+            }
+
+        } else {
+            System.out.println("Файла с таким именем уже несуществует");
+        }
     }
 
     public void addFile(String text) {
@@ -33,16 +64,14 @@ public class TextFile extends UserFile {
         }
     }
 
-    public void renameFile(String newFileName) {
-        String fullNewPathOfFile = null;
-        fullNewPathOfFile = pathOfFile + newFileName + ".txt";
-        File fileNew = new File(fullNewPathOfFile);
+    public void renameFile(String path) {
+        File fileNew = new File(path);
 
         if (file != null && file.exists()) {
 
             file.renameTo(fileNew);
             System.out.println("Файл успешно переименован");
-            super.file = fileNew;
+            this.file = fileNew;
 
         } else {
             System.out.println("Файл с исходным именем отсутствует, вначале создайте файл");
@@ -54,7 +83,6 @@ public class TextFile extends UserFile {
             try (FileReader fr = new FileReader(file)) {
 
                 Scanner scan = new Scanner(fr);
-                System.out.println("Имеющийся текст в файле:");
 
                 while (scan.hasNextLine()) {
                     System.out.println(scan.nextLine());

@@ -1,7 +1,5 @@
 package by.training.java.module_5.basics_of_OOP.task01;
 
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -9,47 +7,34 @@ public class Main {
         // Методы: создать, переименовать, вывести на консоль содержимое, дополнить, удалить.
 
         String fileSeparator = System.getProperty("file.separator");
-        TextFile textFile = new TextFile(new Directory("E:" + fileSeparator));
 
-        @SuppressWarnings("resource")
-        Scanner sc = new Scanner(System.in);
-        String number;
+        File file = new File(new Directory("text.txt", "E:" + fileSeparator));
 
-        do {
-            System.out.print("\nВыберите пункт меню:"
-                    + "\n1. Создать текущий файл"
-                    + "\n2. Переименовать файл"
-                    + "\n3. Вывести на консоль содержимое"
-                    + "\n4. Дополнить файл"
-                    + "\n5. Удалить текущий файл"
-                    + "\n0. Окончание работы программы.");
+        System.out.println(file.getDirectory().toString());   // текущее имя и директория
 
-            System.out.print("\nПожалуйста, сделайте свой выбор в меню >> ");
-            number = sc.nextLine();
+        System.out.println("Создать файл:");
+        file.createFile(file.getDirectory().getFullPath());
 
-            switch (number) {
-                case "1":
-                    System.out.print("Задайте имя файла без расширения >> ");
-                    textFile.createFile(sc.nextLine());
-                    break;
-                case "2":
-                    System.out.print("Задайте новое имя файла без расширения >> ");
-                    textFile.renameFile(sc.nextLine());
-                    break;
-                case "3":
-                    textFile.printContent();
-                    break;
-                case "4":
-                    System.out.print("Введите текст >> ");
-                    textFile.addFile(sc.nextLine());
-                    break;
-                case "5":
-                    textFile.deleteFile();
-                    break;
-                case "0":
-                    System.out.print("Завершение работы приложения");
-            }
-            System.out.println("");
-        } while (!number.matches("[0]"));
+
+        System.out.println("Переименовать файл:");
+        String newFileName = "text2.txt";
+        file.getDirectory().setName(newFileName);
+        file.renameFile(file.getDirectory().getFullPath());
+
+
+        System.out.println("Дополнить файл текстом:");
+        file.contentFile("текст текст текст");
+        file.addFile(file.getContent());
+
+
+        System.out.println("Содержимое файла: ");
+        file.printContent();
+
+
+        System.out.println(file.getDirectory().toString());  // текущее имя и директория
+
+
+        System.out.println("Удалить файл:");
+        file.deleteFile();
     }
 }
