@@ -11,7 +11,8 @@ public class TextFile extends by.training.java.module_5.basics_of_OOP.task01.Fil
 
     private File file;
 
-    public TextFile(){}
+    public TextFile() {
+    }
 
     public void createFile(String path) {
         file = new File(path);

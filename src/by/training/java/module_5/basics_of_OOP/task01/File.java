@@ -1,11 +1,12 @@
 package by.training.java.module_5.basics_of_OOP.task01;
 
-public class File{
+public class File {
 
     private StringBuilder content;
     private Directory directory;
 
-    public File () {}
+    public File() {
+    }
 
     public File(Directory directory) {
         this.directory = directory;
