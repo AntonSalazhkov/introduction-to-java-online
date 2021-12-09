@@ -8,30 +8,30 @@ public class Main {
 
         String fileSeparator = System.getProperty("file.separator");
 
-        File file = new File(new Directory("text.txt", "E:" + fileSeparator));
-        TextFile textFile = new TextFile();
+        TextFile textFile = new TextFile(new Directory("text.txt", "E:" + fileSeparator));
 
-        System.out.println(file.getDirectory().toString());   // текущее имя и директория
+        System.out.println(textFile.getDirectory().toString());   // текущее имя и директория
 
         System.out.println("Создать файл:");
-        textFile.createFile(file.getDirectory().getFullPath());
+        textFile.createFile(textFile.getDirectory().getFullPath());
 
 
         System.out.println("Переименовать файл:");
         String newFileName = "text2.txt";
-        file.getDirectory().setName(newFileName);
-        textFile.renameFile(file.getDirectory().getFullPath());
+        textFile.getDirectory().setName(newFileName);
+        textFile.renameFile(textFile.getDirectory().getFullPath());
 
 
         System.out.println("Дополнить файл текстом:");
-        textFile.addFile(textFile.contentFile("текст текст текст"));
+        textFile.contentFile("текст текст текст");
+        textFile.addFile(textFile.getContent());
 
 
         System.out.println("Содержимое файла: ");
         textFile.printContent();
 
 
-        System.out.println(file.getDirectory().toString());  // текущее имя и директория
+        System.out.println(textFile.getDirectory().toString());  // текущее имя и директория
 
 
         System.out.println("Удалить файл:");
