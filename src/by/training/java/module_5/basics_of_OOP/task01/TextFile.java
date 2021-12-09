@@ -1,6 +1,6 @@
 package by.training.java.module_5.basics_of_OOP.task01;
 
-public class TextFile extends by.training.java.module_5.basics_of_OOP.task01.File {
+public class TextFile extends File{
 
     private StringBuilder content;
     private Directory directory;
