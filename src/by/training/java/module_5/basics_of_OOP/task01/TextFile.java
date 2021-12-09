@@ -7,9 +7,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class TextFile extends Directory {
+public class TextFile extends by.training.java.module_5.basics_of_OOP.task01.File {
 
     private File file;
+
+    public TextFile(){}
 
     public void createFile(String path) {
         file = new File(path);

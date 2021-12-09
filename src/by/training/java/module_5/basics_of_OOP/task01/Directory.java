@@ -6,9 +6,6 @@ public class Directory {
     private String path;
     private String fullPath;
 
-    public Directory() {
-    }
-
     public Directory(String name, String path) {
         this.name = name;
         this.path = path;
