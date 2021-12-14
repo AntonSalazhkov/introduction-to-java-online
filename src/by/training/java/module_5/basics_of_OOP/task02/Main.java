@@ -12,23 +12,23 @@ public class Main {
         ShoppingCart product1 = new ShoppingCart(1, "Телевизор", 1, 100);
         ShoppingCart product2 = new ShoppingCart(2, "Утюг", 2, 200);
 
-        payment.addToCart(product1);                // добавляем товар в корзину
+        payment.addToCart(product1);     // добавляем товар в корзину
         payment.addToCart(product2);
-        payment.calculateOrderCost();               // высчитываем стоимость заказа
+        payment.calculateOrderCost();    // высчитываем стоимость заказа
 
-        payment.getString();                        // вывести товары в корзине
+        payment.getString();             // вывести товары в корзине
         System.out.println("К оплате: " + payment.getOrderCost() + " руб.");
 
 
-        payment.quantityChange(2, 3);     // меняем количество товара (номер товара, новое количество)
-        payment.calculateOrderCost();                      // пересчитывеме стоимость заказа
+        payment.quantityChange(2, 3); // меняем количество товара (номер товара, новое количество)
+        payment.calculateOrderCost();                  // пересчитываем стоимость заказа
 
         payment.getString();
         System.out.println("К оплате: " + payment.getOrderCost() + " руб.");
 
 
-        payment.deleteProduct(1);                  // удаляем заказ из корзины (номер товара)
-        payment.calculateOrderCost();                      // пересчитывеме стоимость заказа
+        payment.deleteProduct(1);              // удаляем заказ из корзины (номер товара)
+        payment.calculateOrderCost();                  // пересчитываем стоимость заказа
 
         payment.getString();
         System.out.println("К оплате: " + payment.getOrderCost() + " руб.");
