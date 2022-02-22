@@ -1,6 +1,6 @@
 package by.training.java.module_2.algorithmization;
 
-public class Task01 {
+public class Task1_01 {
 
 	public static void main(String[] args) {
 		// 1. В массив A[N] занесены натуральные числа. Найти сумму тех элементов, которые

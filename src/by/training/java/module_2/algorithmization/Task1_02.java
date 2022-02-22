@@ -1,6 +1,6 @@
 package by.training.java.module_2.algorithmization;
 
-public class Task02 {
+public class Task1_02 {
 
 	public static void main(String[] args) {
 		// 2. Дана последовательность действительных чисел a1, a2, ... , an.Заменить все ее
@@ -21,5 +21,4 @@ public class Task02 {
 		System.out.println("");
 		System.out.println("Количество замен: " + k);
 	}
-
 }
