@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Deals>
+    <Person_1>
+        <firstName>Anton</firstName>
+        <lastName>Maksimov</lastName>
+        <placeOfResidence>Gomel</placeOfResidence>
+        <birthday>12:12:1999</birthday>
+    </Person_1>
+    <Person_2>
+        <firstName>Maksim</firstName>
+        <lastName>Potapov</lastName>
+        <placeOfResidence>Grodno</placeOfResidence>
+        <birthday>21:12:1989</birthday>
+    </Person_2>
+    <Person_3>
+        <firstName>Ivan</firstName>
+        <lastName>Kornikov</lastName>
+        <placeOfResidence>Minsk</placeOfResidence>
+        <birthday>16:12:2005</birthday>
+    </Person_3>
+    <Person_4>
+        <firstName>Anna</firstName>
+        <lastName>Carp</lastName>
+        <placeOfResidence>Brest</placeOfResidence>
+        <birthday>02:05:2000</birthday>
+    </Person_4>
+</Deals>
